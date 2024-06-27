@@ -1,0 +1,4 @@
+loadboard STM32F746G-DISCO allmodes
+project name STM32CubeMX
+project toolchain "MDK-ARM V5"
+SetCopyLibrary "copy only"

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package schemaVersion="1.7.36" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Open-CMSIS-Pack/Open-CMSIS-Pack-Spec/v1.7.36/schema/PACK.xsd">
+  <name>STM32F746G-DISCO_BSP</name>
+  <vendor>Keil</vendor>
+  <description>STMicroelectronics STM32F7 Series STM32F746G-DISCO Board Support Pack</description>
+  <url>https://www.keil.com/pack/</url>
+  <repository type="git">https://github.com/Open-CMSIS-Pack/STM32F746G-DISCO_BSP.git</repository>
+  <license>LICENSE</license>
+  <licenseSets>
+    <licenseSet id="all" default="true" gating="true">
+      <license name="LICENSE" title="Apache 2.0 open-source license" spdx="Apache-2.0"/>
+    </licenseSet>
+  </licenseSets>
+
+  <releases>
+    <release version="1.0.0-dev0">
+      Prepared for new CMSIS-Toolbox CubeMX integration
+      Board description for STM32F746G-DISCO
+      Board Layer for IoT
+      Drivers:
+      - CMSIS-Driver VIO
+    </release>
+  </releases>
+
+  <keywords>
+    <!-- keywords for indexing -->
+    <keyword>ST</keyword>
+    <keyword>Board Support Pack</keyword>
+    <keyword>STM32F7</keyword>
+    <keyword>STM32F746G-DISCO</keyword>
+  </keywords>
+
+  <requirements>
+    <packages>
+      <package vendor="Keil" name="STM32F7xx_DFP" version="3.0.0-0"/>
+      <package vendor="ARM"  name="CMSIS"         version="6.0.0-0"/>
+    </packages>
+  </requirements>
+
+  <conditions>
+    <!-- Board Condition -->
+    <condition id="STM32F746G-DISCO">
+      <description>STMicroelectronics STM32F746G-DISCO Board</description>
+      <require Bvendor="STMicroelectronics" Bname="STM32F746G-DISCO"/>
+    </condition>
+  </conditions>
+
+  <components>
+    <!-- CMSIS VIO Driver component for STM32F746G-DISCO -->
+    <component Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cversion="2.0.1" Capiversion="1.0.0" condition="STM32F746G-DISCO">
+      <description>I/O implementation for STM32F746G-DISCO</description>
+      <RTE_Components_h>
+        #define RTE_VIO_BOARD
+        #define RTE_VIO_STM32F746G_DISCO
+      </RTE_Components_h>
+      <files>
+        <file category="source" name="CMSIS/Driver/vio_STM32F746G-DISCO.c"/>
+      </files>
+    </component>
+  </components>
+
+  <csolution>
+    <clayer type="Board" path="Layers/IoT" file="Board.clayer.yml" copy-to="Board/STM32F746G-DISCO" condition="STM32F746G-DISCO"/>
+  </csolution>
+
+  <boards>
+    <!-- STM32F746G-DISCO -->
+    <board vendor="STMicroelectronics" name="STM32F746G-DISCO" revision="Rev.B" salesContact="https://www.st.com/stonline/contactus/contacts/index.php">
+      <description>STMicroelectronics STM32F746G-DISCO Board Support and Examples</description>
+      <image small="Images/stm32f746g-disco_small.png"
+             large="Images/stm32f746g-disco_large.png"/>
+      <book category="overview"  name="https://www.st.com/en/evaluation-tools/32f746gdiscovery.html" title="STM32F746G_Discovery Web Page"/>
+      <book category="setup"     name="https://pack-content.cmsis.io/Keil/STM32F7xx_DFP/2.16.0/MDK/Boards/ST/STM32F746G_Discovery/Documentation/32F746GDISCOVERY_QSG.pdf" title="STM32F746G-DISCO Quick Start Guide" public="true"/>
+      <book category="schematic" name="https://www.st.com/resource/en/schematic_pack/mb1191-f746ngh6-b02_schematic.pdf"                                                   title="Schematics"                         public="true"/>
+      <book category="manual"    name="https://www.st.com/resource/en/user_manual/um1907-discovery-kit-for-stm32f7-series-with-stm32f746ng-mcu-stmicroelectronics.pdf"    title="User Manual"                        public="true"/>
+      <book category="manual"    name="https://www.st.com/resource/en/data_brief/32f746gdiscovery.pdf"                                                                    title="Data Brief"                         public="true"/>
+      <book category="other"     name="https://www.st.com/resource/en/board_manufacturing_specification/mb1191_manufacturing.zip"                                         title="Gerber Files"                       public="true"/>
+      <book category="other"     name="https://www.st.com/resource/en/bill_of_materials/mb1191-bom.zip"                                                                   title="Bill of Materials"                  public="true"/>
+      <book category="other"     name="Documents/README.md"                                                                                                               title="Guide"                              public="true"/>
+      <mountedDevice    deviceIndex="0" Dvendor="STMicroelectronics:13" Dname="STM32F746NGHx"/>
+      <compatibleDevice deviceIndex="0" Dvendor="STMicroelectronics:13" DsubFamily="STM32F746"/>
+      <feature type="ODbg"      n="1"                name="On-board ST-LINK/V2"/>
+      <feature type="XTAL"      n="25000000"/>
+      <feature type="RAM"       n="1"                name="128-Mbit SDRAM (64 Mbits accessible)"/>
+      <feature type="ROM"       n="1"                name="128-Mbit Quad-SPI Flash memory"/>
+      <feature type="MemCard"   n="1"                name="microSD card holder"/>
+      <feature type="PWR"       n="5"                name="USB Powered"/>
+      <feature type="PWR"       n="3"  m="5"         name="External Supply"/>
+      <feature type="USB"       n="2"                name="USB OTG HS and FS with micro-AB Connector"/>
+      <feature type="ETH"       n="1"  m="100000000" name="RJ54 Jack"/>
+      <feature type="I2C"       n="1"                name="I2C extension connector"/>
+      <feature type="Button"    n="2"                name="Push-buttons: User and Reset"/>
+      <feature type="LineIn"    n="1"/>
+      <feature type="LineOut"   n="1"/>
+      <feature type="MIC"       n="2"                name="ST MEMS microphones"/>
+      <feature type="ConnOther" n="1"                name="SPDIF RCA input connector"/>
+      <feature type="Speaker"   n="2"/>
+      <feature type="GLCD"      n="1"  m="480.272"   name="Color TFT LCD with capacitive touch screen"/>
+      <feature type="CustomFF"  n="80" m="130"       name="Discovery Board Formfactor"/>
+      <feature type="ArduinoFF" n="1"                name="Arduino Uno 3V connectors"/>
+      <feature type="Camera"    n="1"/>
+      <debugInterface adapter="ST-Link" connector="Mini-USB"/>
+      <debugProbe connector="Mini-USB" debugClock="10000000" debugLink="swd" name="ST-Link"/>
+    </board>
+  </boards>
+
+  <examples>
+    <example name="Blinky" folder="Examples/Blinky" doc="README.md">
+      <description>CMSIS-RTOS2 Blinky example with VIO</description>
+      <board name="STM32F746G-DISCO" vendor="STMicroelectronics"/>
+      <project>
+        <environment name="csolution" load="Blinky.csolution.yml"/>
+      </project>
+    </example>
+  </examples>
+</package>
