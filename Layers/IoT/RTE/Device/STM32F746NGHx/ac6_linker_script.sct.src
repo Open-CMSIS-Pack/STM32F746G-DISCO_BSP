@@ -83,7 +83,6 @@ LR_ROM0 __ROM0_BASE __ROM0_SIZE  {
     *(.TxDecripSection)
     *(.driver.eth_mac0_rx_buf)
     *(.driver.eth_mac0_tx_buf)
-    *(.driver.mci0)
   }
 #endif
 

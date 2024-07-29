@@ -44,15 +44,14 @@ layer:
 
   define:
     - CMSIS_target_header: \"STM32F746G-DISCO.h\"
-    - MemoryCard_1_MMC
 
   packs:
     - pack: Keil::STM32F7xx_DFP@>=3.0.0-0
     - pack: Keil::STM32F746G-DISCO_BSP@>=1.0.0-0
-    - pack: ARM::CMSIS-Driver_STM32@>=1.0.0-0
-    - pack: ARM::CMSIS-Driver@>=2.8.0-0
     - pack: ARM::CMSIS@>=6.0.0-0
     - pack: ARM::CMSIS-Compiler@>=2.0.0-0
+    - pack: ARM::CMSIS-Driver@>=2.8.0-0
+    - pack: ARM::CMSIS-Driver_STM32@>=1.0.0-0
 
   misc:
     - for-compiler: AC6
@@ -62,7 +61,7 @@ layer:
   components:
     - component: Device:CubeMX
 
-    - component: ARM::CMSIS:CORE
+    - component: CMSIS:CORE
 
     - component: CMSIS Driver:Ethernet MAC
     - component: CMSIS Driver:Ethernet PHY:LAN8742A
@@ -74,10 +73,10 @@ layer:
     - component: CMSIS Driver:USB Host
     - component: CMSIS Driver:VIO:Board
 
-    - component: ARM::CMSIS-Compiler:CORE
-    - component: ARM::CMSIS-Compiler:STDERR:Custom
-    - component: ARM::CMSIS-Compiler:STDOUT:Custom
-    - component: ARM::CMSIS-Compiler:STDIN:Custom
+    - component: CMSIS-Compiler:CORE
+    - component: CMSIS-Compiler:STDERR:Custom
+    - component: CMSIS-Compiler:STDOUT:Custom
+    - component: CMSIS-Compiler:STDIN:Custom
 
   groups:
     - group: Board

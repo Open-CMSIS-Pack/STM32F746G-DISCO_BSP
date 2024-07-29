@@ -36,7 +36,6 @@ Refer to ["Configure STM32 Devices with CubeMX"](https://github.com/Open-CMSIS-P
 | CMSIS-Driver VIO  | Physical resource
 |:------------------|:--------------------------------------
 | vioBUTTON0        | Button USER (PI11)
-| vioLED0           | LD1 GREEN   (PI1)
 
 ## Arduino UNO mapping
 

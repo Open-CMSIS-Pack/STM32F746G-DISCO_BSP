@@ -716,7 +716,7 @@ void HAL_LTDC_MspInit(LTDC_HandleTypeDef* hltdc)
     HAL_GPIO_Init(GPIOI, &GPIO_InitStruct);
 
     /* LTDC interrupt Init */
-    HAL_NVIC_SetPriority(LTDC_IRQn, 0, 0);
+    HAL_NVIC_SetPriority(LTDC_IRQn, 8, 0);
     HAL_NVIC_EnableIRQ(LTDC_IRQn);
   /* USER CODE BEGIN LTDC_MspInit 1 */
 
@@ -953,15 +953,15 @@ void HAL_RTC_MspDeInit(RTC_HandleTypeDef* hrtc)
 }
 
 /**
-* @brief MMC MSP Initialization
+* @brief SD MSP Initialization
 * This function configures the hardware resources used in this example
-* @param hmmc: MMC handle pointer
+* @param hsd: SD handle pointer
 * @retval None
 */
-void HAL_MMC_MspInit(MMC_HandleTypeDef* hmmc)
+void HAL_SD_MspInit(SD_HandleTypeDef* hsd)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
-  if(hmmc->Instance==SDMMC1)
+  if(hsd->Instance==SDMMC1)
   {
   /* USER CODE BEGIN SDMMC1_MspInit 0 */
 
@@ -1014,7 +1014,7 @@ void HAL_MMC_MspInit(MMC_HandleTypeDef* hmmc)
       Error_Handler();
     }
 
-    __HAL_LINKDMA(hmmc,hdmarx,hdma_sdmmc1_rx);
+    __HAL_LINKDMA(hsd,hdmarx,hdma_sdmmc1_rx);
 
     /* SDMMC1_TX Init */
     hdma_sdmmc1_tx.Instance = DMA2_Stream6;
@@ -1035,7 +1035,7 @@ void HAL_MMC_MspInit(MMC_HandleTypeDef* hmmc)
       Error_Handler();
     }
 
-    __HAL_LINKDMA(hmmc,hdmatx,hdma_sdmmc1_tx);
+    __HAL_LINKDMA(hsd,hdmatx,hdma_sdmmc1_tx);
 
     /* SDMMC1 interrupt Init */
     HAL_NVIC_SetPriority(SDMMC1_IRQn, 8, 0);
@@ -1049,14 +1049,14 @@ void HAL_MMC_MspInit(MMC_HandleTypeDef* hmmc)
 }
 
 /**
-* @brief MMC MSP De-Initialization
+* @brief SD MSP De-Initialization
 * This function freeze the hardware resources used in this example
-* @param hmmc: MMC handle pointer
+* @param hsd: SD handle pointer
 * @retval None
 */
-void HAL_MMC_MspDeInit(MMC_HandleTypeDef* hmmc)
+void HAL_SD_MspDeInit(SD_HandleTypeDef* hsd)
 {
-  if(hmmc->Instance==SDMMC1)
+  if(hsd->Instance==SDMMC1)
   {
   /* USER CODE BEGIN SDMMC1_MspDeInit 0 */
 
@@ -1078,8 +1078,8 @@ void HAL_MMC_MspDeInit(MMC_HandleTypeDef* hmmc)
     HAL_GPIO_DeInit(SDMMC_CMD_GPIO_Port, SDMMC_CMD_Pin);
 
     /* SDMMC1 DMA DeInit */
-    HAL_DMA_DeInit(hmmc->hdmarx);
-    HAL_DMA_DeInit(hmmc->hdmatx);
+    HAL_DMA_DeInit(hsd->hdmarx);
+    HAL_DMA_DeInit(hsd->hdmatx);
 
     /* SDMMC1 interrupt DeInit */
     HAL_NVIC_DisableIRQ(SDMMC1_IRQn);

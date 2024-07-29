@@ -82,7 +82,7 @@ RTC_HandleTypeDef hrtc;
 SAI_HandleTypeDef hsai_BlockA2;
 SAI_HandleTypeDef hsai_BlockB2;
 
-MMC_HandleTypeDef hmmc1;
+SD_HandleTypeDef hsd1;
 DMA_HandleTypeDef hdma_sdmmc1_rx;
 DMA_HandleTypeDef hdma_sdmmc1_tx;
 
@@ -132,7 +132,7 @@ static void MX_USART1_UART_Init(void);
 static void MX_USART6_UART_Init(void);
 static void MX_USB_OTG_FS_PCD_Init(void);
 static void MX_ADC3_Init(void);
-static void MX_SDMMC1_MMC_Init(void);
+static void MX_SDMMC1_SD_Init(void);
 static void MX_USB_OTG_HS_HCD_Init(void);
 /* USER CODE BEGIN PFP */
 
@@ -170,6 +170,7 @@ int main(void)
   PeriphCommonClock_Config();
 
   /* USER CODE BEGIN SysInit */
+  SystemCoreClockUpdate();
 
   /* USER CODE END SysInit */
 
@@ -882,7 +883,7 @@ static void MX_SAI2_Init(void)
   * @param None
   * @retval None
   */
-static void MX_SDMMC1_MMC_Init(void)
+static void MX_SDMMC1_SD_Init(void)
 {
 
   /* USER CODE BEGIN SDMMC1_Init 0 */
@@ -892,18 +893,18 @@ static void MX_SDMMC1_MMC_Init(void)
   /* USER CODE BEGIN SDMMC1_Init 1 */
 
   /* USER CODE END SDMMC1_Init 1 */
-  hmmc1.Instance = SDMMC1;
-  hmmc1.Init.ClockEdge = SDMMC_CLOCK_EDGE_RISING;
-  hmmc1.Init.ClockBypass = SDMMC_CLOCK_BYPASS_DISABLE;
-  hmmc1.Init.ClockPowerSave = SDMMC_CLOCK_POWER_SAVE_DISABLE;
-  hmmc1.Init.BusWide = SDMMC_BUS_WIDE_4B;
-  hmmc1.Init.HardwareFlowControl = SDMMC_HARDWARE_FLOW_CONTROL_DISABLE;
-  hmmc1.Init.ClockDiv = 0;
-  if (HAL_MMC_Init(&hmmc1) != HAL_OK)
+  hsd1.Instance = SDMMC1;
+  hsd1.Init.ClockEdge = SDMMC_CLOCK_EDGE_RISING;
+  hsd1.Init.ClockBypass = SDMMC_CLOCK_BYPASS_DISABLE;
+  hsd1.Init.ClockPowerSave = SDMMC_CLOCK_POWER_SAVE_DISABLE;
+  hsd1.Init.BusWide = SDMMC_BUS_WIDE_4B;
+  hsd1.Init.HardwareFlowControl = SDMMC_HARDWARE_FLOW_CONTROL_DISABLE;
+  hsd1.Init.ClockDiv = 0;
+  if (HAL_SD_Init(&hsd1) != HAL_OK)
   {
     Error_Handler();
   }
-  if (HAL_MMC_ConfigWideBusOperation(&hmmc1, SDMMC_BUS_WIDE_4B) != HAL_OK)
+  if (HAL_SD_ConfigWideBusOperation(&hsd1, SDMMC_BUS_WIDE_4B) != HAL_OK)
   {
     Error_Handler();
   }

@@ -54,7 +54,7 @@ generator-import:
         - file: ./STM32CubeMX/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c
         - file: ./STM32CubeMX/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai_ex.c
         - file: ./STM32CubeMX/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c
-        - file: ./STM32CubeMX/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_mmc.c
+        - file: ./STM32CubeMX/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sd.c
         - file: ./STM32CubeMX/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spdifrx.c
         - file: ./STM32CubeMX/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.c
         - file: ./STM32CubeMX/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.c
