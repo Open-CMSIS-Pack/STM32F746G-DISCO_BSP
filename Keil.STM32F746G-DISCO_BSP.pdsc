@@ -13,7 +13,7 @@
   </licenseSets>
 
   <releases>
-    <release version="1.0.0-dev0">
+    <release version="1.0.0-dev">
       Prepared for new CMSIS-Toolbox CubeMX integration
       Board description for STM32F746G-DISCO
       Board Layer for IoT
@@ -32,8 +32,9 @@
 
   <requirements>
     <packages>
-      <package vendor="Keil" name="STM32F7xx_DFP" version="3.0.0-0"/>
-      <package vendor="ARM"  name="CMSIS"         version="6.0.0-0"/>
+      <package vendor="Keil" name="STM32F7xx_DFP"      version="3.0.0-0"/>
+      <package vendor="ARM"  name="CMSIS"              version="6.0.0-0"/>
+      <package vendor="ARM"  name="CMSIS-Driver_STM32" version="1.0.0-0"/>
     </packages>
   </requirements>
 
@@ -43,11 +44,18 @@
       <description>STMicroelectronics STM32F746G-DISCO Board</description>
       <require Bvendor="STMicroelectronics" Bname="STM32F746G-DISCO"/>
     </condition>
+
+    <!-- Board Condition + CMSIS Driver GPIO-->
+    <condition id="STM32F746G-DISCO GPIO">
+      <description>STMicroelectronics STM32F746G-DISCO Board with CMSIS Driver GPIO</description>
+      <require condition="STM32F746G-DISCO"/>
+      <require Cclass="CMSIS Driver" Cgroup="GPIO"/>
+    </condition>
   </conditions>
 
   <components>
     <!-- CMSIS VIO Driver component for STM32F746G-DISCO -->
-    <component Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cversion="2.0.1" Capiversion="1.0.0" condition="STM32F746G-DISCO">
+    <component Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cversion="2.0.1" Capiversion="1.0.0" condition="STM32F746G-DISCO GPIO">
       <description>I/O implementation for STM32F746G-DISCO</description>
       <RTE_Components_h>
         #define RTE_VIO_BOARD
