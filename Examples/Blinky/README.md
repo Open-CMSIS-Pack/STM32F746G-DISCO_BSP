@@ -20,4 +20,3 @@ Operation
 | CMSIS-Driver VIO  | Physical resource
 |:------------------|:-------------------------------
 | vioBUTTON0        | Button USER (PI11)
-| vioLED0           | LD1 GREEN   (PI1)

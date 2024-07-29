@@ -170,6 +170,7 @@ int main(void)
   PeriphCommonClock_Config();
 
   /* USER CODE BEGIN SysInit */
+  SystemCoreClockUpdate();
 
   /* USER CODE END SysInit */
 
