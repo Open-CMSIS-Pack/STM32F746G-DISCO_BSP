@@ -27,6 +27,7 @@ Refer to ["Configure STM32 Devices with CubeMX"](https://github.com/Open-CMSIS-P
 | Driver_GPIO0      | GPIO0
 | Driver_I2C1       | I2C1
 | Driver_MCI1       | SDMMC1
+| Driver_SPI2       | SPI2
 | Driver_USART6     | USART6
 | Driver_USBD0      | USB_OTG_FS
 | Driver_USBD1      | USB_OTG_HS
@@ -42,6 +43,7 @@ Refer to ["Configure STM32 Devices with CubeMX"](https://github.com/Open-CMSIS-P
 | Arduino resource  | Driver
 |:------------------|:--------------------------------------
 | UART (D0,D1)      | USART6 Driver (ARDUINO_UNO_UART)
+| SPI  (D11,D12,D13)| SPI2   Driver (ARDUINO_UNO_SPI)
 | I2C  (D20,D21)    | I2C1   Driver (ARDUINO_UNO_I2C)
 | Digital I/O: D2   | GPIO0  Driver (ARDUINO_UNO_D2)
 | Digital I/O: D3   | GPIO0  Driver (ARDUINO_UNO_D3)
@@ -52,9 +54,6 @@ Refer to ["Configure STM32 Devices with CubeMX"](https://github.com/Open-CMSIS-P
 | Digital I/O: D8   | GPIO0  Driver (ARDUINO_UNO_D8)
 | Digital I/O: D9   | GPIO0  Driver (ARDUINO_UNO_D9)
 | Digital I/O: D10  | GPIO0  Driver (ARDUINO_UNO_D10)
-| Digital I/O: D11  | GPIO0  Driver (ARDUINO_UNO_D11)
-| Digital I/O: D12  | GPIO0  Driver (ARDUINO_UNO_D12)
-| Digital I/O: D13  | GPIO0  Driver (ARDUINO_UNO_D13)
 | Digital I/O: D14  | GPIO0  Driver (ARDUINO_UNO_D14)
 | Digital I/O: D15  | GPIO0  Driver (ARDUINO_UNO_D15)
 | Digital I/O: D16  | GPIO0  Driver (ARDUINO_UNO_D16)
