@@ -29,3 +29,10 @@ project:
       files:
         - file: Blinky.c
         - file: retarget_stdio.c
+          define:
+            - RETARGET_STDIO_UART: 1
+
+  linker:
+    - script:  ./RTE/Device/STM32F746NGHx/ac6_linker_script.sct.src
+      regions: ./RTE/Device/STM32F746NGHx/regions_STM32F746G-DISCO.h
+      for-compiler: AC6
