@@ -50,15 +50,15 @@
 
 // <h>RAM Configuration
 // =======================
-// <h> DTCM=<__RAM0>
+// <h> SRAM1=<__RAM0>
 //   <o> Base address <0x0-0xFFFFFFFF:8>
 //   <i> Defines base address of memory region.
-//   <i> Default: 0x20000000
-#define __RAM0_BASE 0x20000000
+//   <i> Default: 0x20010000
+#define __RAM0_BASE 0x20010000
 //   <o> Region size [bytes] <0x0-0xFFFFFFFF:8>
 //   <i> Defines size of memory region.
-//   <i> Default: 0x00010000
-#define __RAM0_SIZE 0x00010000
+//   <i> Default: 0x0003C000
+#define __RAM0_SIZE 0x0003C000
 //   <q>Default region
 //   <i> Enables memory region globally for the application.
 #define __RAM0_DEFAULT 1
@@ -67,15 +67,15 @@
 #define __RAM0_NOINIT 0
 // </h>
 
-// <h> SRAM1=<__RAM1>
+// <h> SRAM2=<__RAM1>
 //   <o> Base address <0x0-0xFFFFFFFF:8>
 //   <i> Defines base address of memory region.
-//   <i> Default: 0x20010000
-#define __RAM1_BASE 0x20010000
+//   <i> Default: 0x2004C000
+#define __RAM1_BASE 0x2004C000
 //   <o> Region size [bytes] <0x0-0xFFFFFFFF:8>
 //   <i> Defines size of memory region.
-//   <i> Default: 0x0003C000
-#define __RAM1_SIZE 0x0003C000
+//   <i> Default: 0x00004000
+#define __RAM1_SIZE 0x00004000
 //   <q>Default region
 //   <i> Enables memory region globally for the application.
 #define __RAM1_DEFAULT 1
@@ -84,15 +84,15 @@
 #define __RAM1_NOINIT 0
 // </h>
 
-// <h> SRAM2=<__RAM2>
+// <h> DTCM=<__RAM2>
 //   <o> Base address <0x0-0xFFFFFFFF:8>
 //   <i> Defines base address of memory region.
-//   <i> Default: 0x2004C000
-#define __RAM2_BASE 0x2004C000
+//   <i> Default: 0x20000000
+#define __RAM2_BASE 0x20000000
 //   <o> Region size [bytes] <0x0-0xFFFFFFFF:8>
 //   <i> Defines size of memory region.
-//   <i> Default: 0x00004000
-#define __RAM2_SIZE 0x00004000
+//   <i> Default: 0x00010000
+#define __RAM2_SIZE 0x00010000
 //   <q>Default region
 //   <i> Enables memory region globally for the application.
 #define __RAM2_DEFAULT 1
