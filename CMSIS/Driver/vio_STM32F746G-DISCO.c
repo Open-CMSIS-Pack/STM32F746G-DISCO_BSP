@@ -1,8 +1,8 @@
 /******************************************************************************
  * @file     vio_STM32F746G-DISCO.c
  * @brief    Virtual I/O implementation for board STM32F746G-DISCO
- * @version  V2.0.1
- * @date     25. July 2024
+ * @version  V2.0.2
+ * @date     10. September 2024
  ******************************************************************************/
 /*
  * Copyright (c) 2020-2024 Arm Limited (or its affiliates).
@@ -29,7 +29,7 @@ The table below lists the physical I/O mapping of this CMSIS-Driver VIO implemen
 
 Virtual Resource  | Variable       | Physical Resource on STM32F746G-DISCO     |
 :-----------------|:---------------|:------------------------------------------|
-vioBUTTON0        | vioSignalIn.0  | GPIO I.11: Button USER                    |
+vioBUTTON0        | vioSignalIn.0  | PI11: Button USER                         |
 */
 
 #include "cmsis_vio.h"
@@ -42,7 +42,9 @@ vioBUTTON0        | vioSignalIn.0  | GPIO I.11: Button USER                    |
 #endif
 
 // VIO input, output definitions
+#ifndef VIO_VALUE_NUM
 #define VIO_VALUE_NUM           5U              // Number of values
+#endif
 
 // VIO input, output variables
 static uint32_t vioSignalIn             __USED; // Memory for incoming signal
@@ -50,21 +52,16 @@ static uint32_t vioSignalOut            __USED; // Memory for outgoing signal
 static int32_t  vioValue[VIO_VALUE_NUM] __USED; // Memory for value used in vioGetValue/vioSetValue
 
 #if !defined CMSIS_VOUT || !defined CMSIS_VIN
-// GPIO Pull Resistor
-#define GPIO_PULL_NONE      (ARM_GPIO_PULL_NONE & 0xFF)
-#define GPIO_PULL_UP        (ARM_GPIO_PULL_UP   & 0xFF)
-#define GPIO_PULL_DOWN      (ARM_GPIO_PULL_DOWN & 0xFF)
 
 // VIO Active State
-#define VIO_ACTIVE_LOW      0U
-#define VIO_ACTIVE_HIGH     1U
+#define VIO_ACTIVE_LOW          0U
+#define VIO_ACTIVE_HIGH         1U
 
 typedef struct {
-  uint16_t   vioSignal;
-  uint16_t   pin;
-  uint8_t    pull;
-  uint8_t    activeState;
-  uint16_t   reserved;
+  uint32_t vioSignal;
+  uint16_t pin;
+  uint8_t  pullResistor;
+  uint8_t  activeState;
 } pinCfg_t;
 
 #if !defined CMSIS_VOUT
@@ -75,7 +72,8 @@ static const pinCfg_t outputCfg[] = {};
 #if !defined CMSIS_VIN
 // VIN Configuration
 static const pinCfg_t inputCfg[] = {
-  { vioBUTTON0, GPIO_PIN_ID_PORTI(11), GPIO_PULL_NONE, VIO_ACTIVE_HIGH, 0U }
+//  signal,     pin,                   pull resistor,      active state
+  { vioBUTTON0, GPIO_PIN_ID_PORTI(11), ARM_GPIO_PULL_NONE, VIO_ACTIVE_HIGH }
 };
 #endif
 
@@ -103,9 +101,10 @@ void vioInit (void) {
     pin = (ARM_GPIO_Pin_t)outputCfg[n].pin;
     pGPIODrv->Setup(pin, NULL);
     pGPIODrv->SetOutputMode(pin, ARM_GPIO_PUSH_PULL);
-    pGPIODrv->SetPullResistor(pin, (ARM_GPIO_PULL_RESISTOR)outputCfg[n].pull);
+    pGPIODrv->SetPullResistor(pin, outputCfg[n].pullResistor);
     pGPIODrv->SetDirection(pin, ARM_GPIO_OUTPUT);
 
+    // Set initial pin state to inactive
     if (outputCfg[n].activeState == VIO_ACTIVE_HIGH) {
       pGPIODrv->SetOutput(pin, 0U);
     } else {
@@ -118,7 +117,7 @@ void vioInit (void) {
   for (n = 0U; n < (sizeof(inputCfg) / sizeof(pinCfg_t)); n++) {
     pin = (ARM_GPIO_Pin_t)inputCfg[n].pin;
     pGPIODrv->Setup(pin, NULL);
-    pGPIODrv->SetPullResistor(pin, (ARM_GPIO_PULL_RESISTOR)inputCfg[n].pull);
+    pGPIODrv->SetPullResistor(pin, inputCfg[n].pullResistor);
     pGPIODrv->SetDirection(pin, ARM_GPIO_INPUT);
   }
 #endif
@@ -139,9 +138,10 @@ void vioSetSignal (uint32_t mask, uint32_t signal) {
   for (n = 0U; n < (sizeof(outputCfg) / sizeof(pinCfg_t)); n++) {
     pin = (ARM_GPIO_Pin_t)outputCfg[n].pin;
     if ((mask & outputCfg[n].vioSignal) != 0U) {
-      pinValue = 0U;
       if ((signal & outputCfg[n].vioSignal) != 0U) {
         pinValue = 1U;
+      } else {
+        pinValue = 0U;
       }
       if (pinValue == outputCfg[n].activeState) {
         pGPIODrv->SetOutput(pin, 1U);
@@ -168,7 +168,7 @@ uint32_t vioGetSignal (uint32_t mask) {
     if ((mask & inputCfg[n].vioSignal) != 0U) {
       pinValue = pGPIODrv->GetInput(pin);
       if (pinValue == inputCfg[n].activeState) {
-        vioSignalIn |= inputCfg[n].vioSignal;
+        vioSignalIn |=  inputCfg[n].vioSignal;
       } else {
         vioSignalIn &= ~inputCfg[n].vioSignal;
       }
@@ -206,20 +206,19 @@ void vioSetValue (uint32_t id, int32_t value) {
 //   Note: vioAIN not supported.
 int32_t vioGetValue (uint32_t id) {
   uint32_t index = id;
-  int32_t  value = 0;
+  int32_t  value;
 #if !defined CMSIS_VIN
 // Add user variables here:
 
 #endif
 
   if (index >= VIO_VALUE_NUM) {
-    return value;                       /* return default in case of out-of-range index */
+    return 0U;                          /* return 0 in case of out-of-range index */
   }
 
 #if !defined CMSIS_VIN
 // Add user code here:
 
-//   vioValue[index] = ...;
 #endif
 
   value = vioValue[index];

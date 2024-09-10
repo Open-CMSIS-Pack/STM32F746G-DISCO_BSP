@@ -55,7 +55,7 @@
 
   <components>
     <!-- CMSIS VIO Driver component for STM32F746G-DISCO -->
-    <component Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cversion="2.0.1" Capiversion="1.0.0" condition="STM32F746G-DISCO GPIO">
+    <component Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cversion="2.0.2" Capiversion="1.0.0" condition="STM32F746G-DISCO GPIO">
       <description>I/O implementation for STM32F746G-DISCO</description>
       <RTE_Components_h>
         #define RTE_VIO_BOARD
