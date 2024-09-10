@@ -1,6 +1,6 @@
 layer:
   type: Board
-  description: STM32F746G-DISCO board setup for IoT
+  description: Default STM32F746G-DISCO board setup
   for-board: STMicroelectronics::STM32F746G-DISCO
 
   generators:
