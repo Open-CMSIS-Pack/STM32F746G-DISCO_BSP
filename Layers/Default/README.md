@@ -21,7 +21,7 @@ Refer to ["Configure STM32 Devices with CubeMX"](https://github.com/Open-CMSIS-P
 ### CMSIS-Driver mapping
 
 | CMSIS-Driver          | Peripheral
-|:----------------------|:-----------------------------------------------
+|:----------------------|:----------------------------------------------
 | Driver_ETH_MAC0       | ETH
 | Driver_ETH_PHY0       | LAN8742A (external)
 | Driver_GPIO0          | GPIO
@@ -40,8 +40,8 @@ Refer to ["Configure STM32 Devices with CubeMX"](https://github.com/Open-CMSIS-P
 
 ## Arduino UNO mapping
 
-| Arduino resource     | Driver
-|:------------------|:--------------------------------------
+| Arduino resource      | Driver
+|:----------------------|:----------------------------------------------
 | UART (D0,D1)          | USART6 Driver (ARDUINO_UNO_UART)
 | SPI  (D11,D12,D13)    | SPI2   Driver (ARDUINO_UNO_SPI)
 | I2C  (D20,D21)        | I2C1   Driver (ARDUINO_UNO_I2C)

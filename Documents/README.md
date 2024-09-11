@@ -17,12 +17,12 @@ connectors.
 
 - [User manual](https://www.st.com/resource/en/user_manual/um1907-discovery-kit-for-stm32f7-series-with-stm32f746ng-mcu-stmicroelectronics.pdf)
 
-## ST-LINK driver installation and firmware upgrade
+## ST-LINK driver installation and firmware upgrade (on Microsoft Windows)
 
 1. Download the latest [ST-LINK driver](https://www.st.com/en/development-tools/stsw-link009.html).
 2. Extract the archive and run `dpinst_amd64.exe`. Follow the displayed instructions.
 3. Download the latest [ST-LINK firmware upgrade](https://www.st.com/en/development-tools/stsw-link007.html).
-4. Extract the archive and run the STLinkUpgrade.exe program.
+4. Extract the archive and run the `ST-LinkUpgrade.exe` program.
 5. Connect the board to your PC using a USB cable and wait until the USB enumeration is completed.
 6. In the **ST-Link Upgrade** program, press the **Device Connect** button.
 7. When the ST-LINK driver is correctly installed, the current ST-LINK version is displayed.
