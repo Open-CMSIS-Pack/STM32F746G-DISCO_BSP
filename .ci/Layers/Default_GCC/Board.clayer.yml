@@ -1,0 +1,83 @@
+layer:
+  type: Board
+  description: Default STM32F746G-DISCO board setup (GCC)
+  for-board: STMicroelectronics::STM32F746G-DISCO
+
+  generators:
+    options:
+      - generator: CubeMX
+        path: ./CubeMX
+        name: Board
+
+  connections:
+    - connect: STM32F746G-DISCO Board
+      provides:
+        - CMSIS_ETH
+        - CMSIS_MCI
+        - CMSIS_USB_Device
+        - CMSIS_USB_Host
+        - CMSIS_VIO
+        - ARDUINO_UNO_I2C
+        - ARDUINO_UNO_SPI
+        - ARDUINO_UNO_UART
+        - ARDUINO_UNO_D2
+        - ARDUINO_UNO_D3
+        - ARDUINO_UNO_D4
+        - ARDUINO_UNO_D5
+        - ARDUINO_UNO_D6
+        - ARDUINO_UNO_D7
+        - ARDUINO_UNO_D8
+        - ARDUINO_UNO_D9
+        - ARDUINO_UNO_D10
+        - ARDUINO_UNO_D14
+        - ARDUINO_UNO_D15
+        - ARDUINO_UNO_D16
+        - ARDUINO_UNO_D17
+        - ARDUINO_UNO_D18
+        - ARDUINO_UNO_D19
+        - STDIN
+        - STDOUT
+        - STDERR
+        - Heap: 1024
+
+  define:
+    - CMSIS_target_header: \"STM32F746G-DISCO.h\"
+
+  packs:
+    - pack: Keil::STM32F7xx_DFP@>=3.0.0-0
+    - pack: Keil::STM32F746G-DISCO_BSP@>=1.0.0-0
+    - pack: ARM::CMSIS@>=6.0.0-0
+    - pack: ARM::CMSIS-Compiler@>=2.0.0-0
+    - pack: ARM::CMSIS-Driver@>=2.8.0-0
+    - pack: ARM::CMSIS-Driver_STM32@>=1.0.0-0
+
+  components:
+    - component: Device:CubeMX
+
+    - component: CMSIS:CORE
+
+    - component: CMSIS Driver:Ethernet MAC
+    - component: CMSIS Driver:Ethernet PHY:LAN8742A
+    - component: CMSIS Driver:GPIO
+    - component: CMSIS Driver:I2C
+    - component: CMSIS Driver:MCI
+    - component: CMSIS Driver:SPI
+    - component: CMSIS Driver:USART
+    - component: CMSIS Driver:USB Device
+    - component: CMSIS Driver:USB Host
+    - component: CMSIS Driver:VIO:Board
+
+    - component: CMSIS-Compiler:CORE
+    - component: CMSIS-Compiler:STDERR:Custom
+    - component: CMSIS-Compiler:STDOUT:Custom
+    - component: CMSIS-Compiler:STDIN:Custom
+
+  groups:
+    - group: Board
+      files:
+        - file: ./STM32F746G-DISCO.h
+        - file: ./retarget_stdio.c
+
+  linker:
+    - script: ./CubeMX/STM32CubeMX/STM32CubeIDE/STM32F746NGHX_FLASH.ld
+      for-compiler: GCC
