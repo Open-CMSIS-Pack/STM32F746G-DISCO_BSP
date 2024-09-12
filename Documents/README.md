@@ -7,12 +7,6 @@ ST-LINK/V2-1 debugger/programmer is included; specialized add-on boards
 can be connected thanks to the **Arduino™ UNO** or to the **expansion**
 connectors.
 
-# Board pinout
-
-## Pins Legend
-
-![](disco_f746ng_mbed_pinout_v5.png)
-
 # Getting started
 
 - [User manual](https://www.st.com/resource/en/user_manual/um1907-discovery-kit-for-stm32f7-series-with-stm32f746ng-mcu-stmicroelectronics.pdf)
