@@ -78,13 +78,10 @@
       <image small="Images/stm32f746g-disco_small.png"
              large="Images/stm32f746g-disco_large.png"/>
       <book category="overview"  name="https://www.st.com/en/evaluation-tools/32f746gdiscovery.html" title="STM32F746G_Discovery Web Page"/>
-      <book category="setup"     name="https://pack-content.cmsis.io/Keil/STM32F7xx_DFP/2.16.0/MDK/Boards/ST/STM32F746G_Discovery/Documentation/32F746GDISCOVERY_QSG.pdf" title="STM32F746G-DISCO Quick Start Guide" public="true"/>
-      <book category="schematic" name="https://www.st.com/resource/en/schematic_pack/mb1191-f746ngh6-b02_schematic.pdf"                                                   title="Schematics"                         public="true"/>
-      <book category="manual"    name="https://www.st.com/resource/en/user_manual/um1907-discovery-kit-for-stm32f7-series-with-stm32f746ng-mcu-stmicroelectronics.pdf"    title="User Manual"                        public="true"/>
-      <book category="manual"    name="https://www.st.com/resource/en/data_brief/32f746gdiscovery.pdf"                                                                    title="Data Brief"                         public="true"/>
-      <book category="other"     name="https://www.st.com/resource/en/board_manufacturing_specification/mb1191_manufacturing.zip"                                         title="Gerber Files"                       public="true"/>
-      <book category="other"     name="https://www.st.com/resource/en/bill_of_materials/mb1191-bom.zip"                                                                   title="Bill of Materials"                  public="true"/>
-      <book category="other"     name="Documents/README.md"                                                                                                               title="Guide"                              public="true"/>
+      <book category="manual"    name="https://www.st.com/resource/en/data_brief/32f746gdiscovery.pdf" title="Data Brief" public="true"/>
+      <book category="manual"    name="https://www.st.com/resource/en/user_manual/um1907-discovery-kit-for-stm32f7-series-with-stm32f746ng-mcu-stmicroelectronics.pdf" title="User Manual" public="true"/>
+      <book category="schematic" name="https://www.st.com/resource/en/schematic_pack/mb1191-f746ngh6-b02_schematic.pdf" title="Schematics" public="true"/>
+      <book category="other"     name="Documents/README.md" title="Guide" public="true"/>
       <mountedDevice    deviceIndex="0" Dvendor="STMicroelectronics:13" Dname="STM32F746NGHx"/>
       <compatibleDevice deviceIndex="0" Dvendor="STMicroelectronics:13" DsubFamily="STM32F746"/>
       <feature type="ODbg"      n="1"                name="On-board ST-LINK/V2"/>
