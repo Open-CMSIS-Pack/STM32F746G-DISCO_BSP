@@ -1,4 +1,6 @@
-# Overview
+# STM32F746G-DISCO Discovery kit
+
+## Overview
 
 The discovery kit enables a wide range of use cases taking advantage of
 premium graphics, audio, multi-sensor support, WVGA color display,
@@ -7,11 +9,11 @@ ST-LINK/V2-1 debugger/programmer is included; specialized add-on boards
 can be connected thanks to the **Arduino™ UNO** or to the **expansion**
 connectors.
 
-# Getting started
+## Getting started
 
 - [User manual](https://www.st.com/resource/en/user_manual/um1907-discovery-kit-for-stm32f7-series-with-stm32f746ng-mcu-stmicroelectronics.pdf)
 
-## ST-LINK driver installation and firmware upgrade (on Microsoft Windows)
+### ST-LINK driver installation and firmware upgrade (on Microsoft Windows)
 
 1. Download the latest [ST-LINK driver](https://www.st.com/en/development-tools/stsw-link009.html).
 2. Extract the archive and run `dpinst_amd64.exe`. Follow the displayed instructions.
@@ -22,7 +24,7 @@ connectors.
 7. When the ST-LINK driver is correctly installed, the current ST-LINK version is displayed.
 8. Press the **Yes >>>>** button to start the firmware upgrade process.
 
-# Technical reference
+## Technical reference
 
 - [STM32F746NG microcontroller](https://www.st.com/en/microcontrollers-microprocessors/stm32f746ng.html)
 - [32F746GDISCOVERY board](https://www.st.com/en/evaluation-tools/32f746gdiscovery.html)
