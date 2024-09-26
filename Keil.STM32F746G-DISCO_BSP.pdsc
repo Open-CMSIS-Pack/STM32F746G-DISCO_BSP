@@ -17,6 +17,7 @@
       Prepared for new CMSIS-Toolbox CubeMX integration
       Board description for STM32F746G-DISCO
       Default Board Layer
+      Blinky example (CMSIS Solution)
       Drivers:
       - CMSIS-Driver VIO
     </release>
@@ -73,15 +74,16 @@
 
   <boards>
     <!-- STM32F746G-DISCO -->
-    <board vendor="STMicroelectronics" name="STM32F746G-DISCO" revision="Rev.B" salesContact="https://www.st.com/stonline/contactus/contacts/index.php">
-      <description>STMicroelectronics STM32F746G-DISCO Board Support and Examples</description>
+    <board vendor="STMicroelectronics" name="STM32F746G-DISCO" revision="Rev.B"
+           salesContact="https://www.st.com/content/st_com/en/contact-us.html">
+      <description>STM32 Discovery development board with STM32F746NGHx MCU</description>
       <image small="Images/stm32f746g-disco_small.png"
              large="Images/stm32f746g-disco_large.png"/>
-      <book category="overview"  name="https://www.st.com/en/evaluation-tools/32f746gdiscovery.html" title="STM32F746G_Discovery Web Page"/>
-      <book category="manual"    name="https://www.st.com/resource/en/data_brief/32f746gdiscovery.pdf" title="Data Brief" public="true"/>
-      <book category="manual"    name="https://www.st.com/resource/en/user_manual/um1907-discovery-kit-for-stm32f7-series-with-stm32f746ng-mcu-stmicroelectronics.pdf" title="User Manual" public="true"/>
-      <book category="schematic" name="https://www.st.com/resource/en/schematic_pack/mb1191-f746ngh6-b02_schematic.pdf" title="Schematics" public="true"/>
-      <book category="other"     name="Documents/README.md" title="Guide" public="true"/>
+      <book category="overview"  name="https://www.st.com/en/evaluation-tools/32f746gdiscovery.html" title="STM32F746G_Discovery Board"/>
+      <book category="overview"  name="https://www.st.com/resource/en/data_brief/32f746gdiscovery.pdf" title="Data Brief"/>
+      <book category="manual"    name="https://www.st.com/resource/en/user_manual/um1907-discovery-kit-for-stm32f7-series-with-stm32f746ng-mcu-stmicroelectronics.pdf" title="User Manual"/>
+      <book category="schematic" name="https://www.st.com/resource/en/schematic_pack/mb1191-f746ngh6-b02_schematic.pdf" title="Schematics"/>
+      <book category="other"     name="Documents/README.md" title="Guide"/>
       <mountedDevice    deviceIndex="0" Dvendor="STMicroelectronics:13" Dname="STM32F746NGHx"/>
       <compatibleDevice deviceIndex="0" Dvendor="STMicroelectronics:13" DsubFamily="STM32F746"/>
       <feature type="ODbg"      n="1"                name="On-board ST-LINK/V2"/>
