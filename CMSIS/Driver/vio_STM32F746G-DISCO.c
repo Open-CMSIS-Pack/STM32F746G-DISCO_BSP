@@ -2,7 +2,7 @@
  * @file     vio_STM32F746G-DISCO.c
  * @brief    Virtual I/O implementation for board STM32F746G-DISCO
  * @version  V2.0.2
- * @date     10. September 2024
+ * @date     26. September 2024
  ******************************************************************************/
 /*
  * Copyright (c) 2020-2024 Arm Limited (or its affiliates).
@@ -27,9 +27,9 @@
 
 The table below lists the physical I/O mapping of this CMSIS-Driver VIO implementation.
 
-Virtual Resource  | Variable       | Physical Resource on STM32F746G-DISCO     |
-:-----------------|:---------------|:------------------------------------------|
-vioBUTTON0        | vioSignalIn.0  | PI11: Button USER                         |
+| Virtual I/O   | Variable       | Board component      | Pin
+|:--------------|:---------------|:---------------------|:------
+| vioBUTTON0    | vioSignalIn.0  | USER button (B1)     | PI11
 */
 
 #include "cmsis_vio.h"
