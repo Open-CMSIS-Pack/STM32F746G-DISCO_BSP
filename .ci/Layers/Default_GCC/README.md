@@ -36,6 +36,8 @@ Refer to ["Configure STM32 Devices with CubeMX"](https://github.com/Open-CMSIS-P
 | Driver_USBH1          | USB_OTG_HS            | USB OTG HS connector (CN12)                   | CMSIS_USB_Host
 | CMSIS-Driver VIO      | GPIO                  | LEDs (LD3, LD1, LD2) and USER button (B1)     | CMSIS_VIO
 
+> Note: ARD_D10 pin on Arduino Connector is configured to PA8 pin (UM1907 User manual). Pins PA8 and PI0 are swapped on the Arduino header (Shematic Rev.B-02).
+
 Reference to [Arduino UNO connector description](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/ReferenceApplications.md#arduino-shield).
 
 ### CMSIS-Driver Virtual I/O mapping
