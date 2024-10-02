@@ -36,6 +36,8 @@ Refer to ["Configure STM32 Devices with CubeMX"](https://github.com/Open-CMSIS-P
 | Driver_USBH1          | USB_OTG_HS            | USB OTG HS connector (CN12)                   | CMSIS_USB_Host
 | CMSIS-Driver VIO      | GPIO                  | LEDs (LD3, LD1, LD2) and USER button (B1)     | CMSIS_VIO
 
+> Note: [Schematics (Rev.B-02)](https://www.st.com/resource/en/schematic_pack/mb1191-f746ngh6-b02_schematic.pdf) error: The Arduino connector pins D10 and D5 are connected incorrectly. D10 should be connected to PA8 and D5 to PI0, as it is described in [User Manual](https://www.st.com/resource/en/user_manual/um1907-discovery-kit-for-stm32f7-series-with-stm32f746ng-mcu-stmicroelectronics.pdf)
+
 Reference to [Arduino UNO connector description](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/ReferenceApplications.md#arduino-shield).
 
 ### CMSIS-Driver Virtual I/O mapping
