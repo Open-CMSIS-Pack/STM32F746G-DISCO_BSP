@@ -193,9 +193,9 @@ extern int shield_setup (void);
 #define DCMI_PWR_EN_GPIO_Port GPIOH
 #define DCMI_D4_Pin GPIO_PIN_14
 #define DCMI_D4_GPIO_Port GPIOH
-#define ARDUINO_D10_Pin GPIO_PIN_0
-#define ARDUINO_D10_GPIO_Port GPIOI
-#define ARDUINO_D10_EXTI_IRQn EXTI0_IRQn
+#define ARDUINO_D5_Pin GPIO_PIN_0
+#define ARDUINO_D5_GPIO_Port GPIOI
+#define ARDUINO_D5_EXTI_IRQn EXTI0_IRQn
 #define VCP_TX_Pin GPIO_PIN_9
 #define VCP_TX_GPIO_Port GPIOA
 #define RCC_OSC32_OUT_Pin GPIO_PIN_15
@@ -204,9 +204,9 @@ extern int shield_setup (void);
 #define LCD_G6_GPIO_Port GPIOK
 #define LCD_G7_Pin GPIO_PIN_2
 #define LCD_G7_GPIO_Port GPIOK
-#define ARDUINO_D5_Pin GPIO_PIN_8
-#define ARDUINO_D5_GPIO_Port GPIOA
-#define ARDUINO_D5_EXTI_IRQn EXTI9_5_IRQn
+#define ARDUINO_D10_Pin GPIO_PIN_8
+#define ARDUINO_D10_GPIO_Port GPIOA
+#define ARDUINO_D10_EXTI_IRQn EXTI9_5_IRQn
 #define OSC_25M_Pin GPIO_PIN_0
 #define OSC_25M_GPIO_Port GPIOH
 #define FMC_A2_Pin GPIO_PIN_2
