@@ -85,7 +85,6 @@
       <book category="schematic" name="https://www.st.com/resource/en/schematic_pack/mb1191-f746ngh6-b02_schematic.pdf" title="Schematics"/>
       <book category="other"     name="Documents/README.md" title="Guide"/>
       <mountedDevice    deviceIndex="0" Dvendor="STMicroelectronics:13" Dname="STM32F746NGHx"/>
-      <compatibleDevice deviceIndex="0" Dvendor="STMicroelectronics:13" DsubFamily="STM32F746"/>
       <feature type="ODbg"      n="1"                name="On-board ST-LINK/V2"/>
       <feature type="XTAL"      n="25000000"/>
       <feature type="RAM"       n="1"                name="128-Mbit SDRAM (64 Mbits accessible)"/>
