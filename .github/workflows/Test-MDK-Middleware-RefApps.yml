@@ -79,7 +79,7 @@ jobs:
         working-directory: ./
         run: |
           mkdir -p ./CI/MW-RefApps/Examples/${{ matrix.solution.dir }}/Board/
-          cp -a./MDK-Middleware/Examples/* ./CI/MW-RefApps/Examples/
+          cp -a ./MDK-Middleware/Examples/. ./CI/MW-RefApps/Examples/
 
       - name: Replace specific csolution files
         working-directory: ./
