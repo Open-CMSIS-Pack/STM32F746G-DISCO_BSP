@@ -14,26 +14,8 @@
   </licenseSets>
 
   <releases>
-    <release version="1.0.3-dev">
+    <release version="1.1.0-dev">
       Active development ...
-      CMSIS VIO Driver:
-      - add support for LED LD1
-      Blinky project:
-      - specify thread names using thread attributes
-      - rename thread IDs
-      - modify app_main_thread (replace loop forever)
-      - add dbgconf files
-      - update RTE_Components.h file
-      - update README.md file
-      - add DWARF-5 debug information
-      - add generated output files
-      Layers:
-      -- modify Default layer (remove SPI2 support)
-      -- add SPI2 board layer
-      Reorganize Licenses:
-      - LICENSES (combined license file: Apache-2.0 and BSD-3-Clause)
-      - LICENSE-Apache-2.0 (for CMSIS add-ons)
-      - LICENSE-BSD-3-Clause (for STM32 HAL)
     </release>
   </releases>
 
