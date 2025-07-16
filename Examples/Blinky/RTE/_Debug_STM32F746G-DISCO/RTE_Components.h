@@ -44,7 +44,7 @@
 #define RTE_CMSIS_Driver_USART21        /* Driver USART21 (LPUART1) */
 #define RTE_CMSIS_Driver_USART22        /* Driver USART22 (LPUART2) */
 #define RTE_CMSIS_Driver_USART23        /* Driver USART23 (LPUART3) */
-/* Keil::CMSIS Driver:VIO:Board@2.0.2 */
+/* Keil::CMSIS Driver:VIO:Board@2.1.0 */
 #define RTE_VIO_BOARD
 #define RTE_VIO_STM32F746G_DISCO
 /* Keil::Device:CubeMX@1.0.0 */

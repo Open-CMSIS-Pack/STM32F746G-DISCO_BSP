@@ -22,10 +22,11 @@
       - specify thread names using thread attributes
       - rename thread IDs
       - modify app_main_thread (replace loop forever)
+      - add dbgconf files
+      - update RTE_Components.h file
+      - update README.md file
       - add DWARF-5 debug information
-      - add RTE_Components.h files
-      - add dbgconf files for the Blinky example.
-      - updated RTE_Components.h file.
+      - add generated output files
       Reorganize Licenses:
       - LICENSES (combined license file: Apache-2.0 and BSD-3-Clause)
       - LICENSE-Apache-2.0 (for CMSIS add-ons)

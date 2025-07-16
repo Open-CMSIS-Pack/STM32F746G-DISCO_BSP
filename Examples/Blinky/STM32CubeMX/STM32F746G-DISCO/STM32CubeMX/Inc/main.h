@@ -174,8 +174,8 @@ extern int app_main     (void);
 #define SDMMC_CMD_GPIO_Port GPIOD
 #define TP3_Pin GPIO_PIN_15
 #define TP3_GPIO_Port GPIOH
-#define ARDUINO_SCK_D13_Pin GPIO_PIN_1
-#define ARDUINO_SCK_D13_GPIO_Port GPIOI
+#define USER_LED1_Pin GPIO_PIN_1
+#define USER_LED1_GPIO_Port GPIOI
 #define OTG_FS_ID_Pin GPIO_PIN_10
 #define OTG_FS_ID_GPIO_Port GPIOA
 #define RCC_OSC32_IN_Pin GPIO_PIN_14
