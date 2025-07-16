@@ -1,6 +1,6 @@
 layer:
   type: Board
-  description: Default STM32F746G-DISCO board setup (GCC)
+  description: Default STM32F746G-DISCO board setup - configured without SPI2 (GCC)
   for-board: STMicroelectronics::STM32F746G-DISCO
 
   generators:
@@ -18,7 +18,6 @@ layer:
         - CMSIS_USB_Host
         - CMSIS_VIO
         - ARDUINO_UNO_I2C
-        - ARDUINO_UNO_SPI
         - ARDUINO_UNO_UART
         - ARDUINO_UNO_D2
         - ARDUINO_UNO_D3
@@ -29,6 +28,8 @@ layer:
         - ARDUINO_UNO_D8
         - ARDUINO_UNO_D9
         - ARDUINO_UNO_D10
+        - ARDUINO_UNO_D11
+        - ARDUINO_UNO_D12
         - ARDUINO_UNO_D14
         - ARDUINO_UNO_D15
         - ARDUINO_UNO_D16
@@ -61,7 +62,6 @@ layer:
     - component: CMSIS Driver:GPIO
     - component: CMSIS Driver:I2C
     - component: CMSIS Driver:MCI
-    - component: CMSIS Driver:SPI
     - component: CMSIS Driver:USART
     - component: CMSIS Driver:USB Device
     - component: CMSIS Driver:USB Host

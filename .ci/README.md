@@ -2,7 +2,8 @@
 
 Content of `.ci` Directory   | Description
 :----------------------------|:-----------------
-`./Layers/Default_GCC`       | Default Board layer for the GCC compiler.
+`./Layers/Default_GCC`       | Default Board layer (configured without SPI2) for the GCC compiler.
+`./Layers/SPI2_GCC`          | SPI2 Board layer (configured with SPI2 interface instead of LD1) for the GCC compiler.
 `./MW-RefApps`               | Patch files for MDK-Middleware reference applications.
 `vcpkg-configuration.json`   | Tool setup for the CI test
 

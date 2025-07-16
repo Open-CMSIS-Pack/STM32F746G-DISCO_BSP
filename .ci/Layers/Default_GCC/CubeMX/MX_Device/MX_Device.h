@@ -1,6 +1,6 @@
 /******************************************************************************
  * File Name   : MX_Device.h
- * Date        : 03/10/2024 11:01:52
+ * Date        : 15/07/2025 11:58:04
  * Description : STM32Cube MX parameter definitions
  * Note        : This file is generated with a generator out of the
  *               STM32CubeMX project and its generated files (DO NOT EDIT!)
@@ -223,41 +223,6 @@
 #define MX_SDMMC1_D3_GPIO_PuPd                  GPIO_NOPULL
 #define MX_SDMMC1_D3_GPIO_Speed                 GPIO_SPEED_FREQ_VERY_HIGH
 #define MX_SDMMC1_D3_GPIO_AF                    GPIO_AF12_SDMMC1
-
-/*------------------------------ SPI2           -----------------------------*/
-#define MX_SPI2                                 1
-
-/* Peripheral Clock Frequency */
-#define MX_SPI2_PERIPH_CLOCK_FREQ               50000000
-
-/* Pins */
-
-/* SPI2_MISO */
-#define MX_SPI2_MISO_Pin                        PB14
-#define MX_SPI2_MISO_GPIO_Pin                   GPIO_PIN_14
-#define MX_SPI2_MISO_GPIOx                      GPIOB
-#define MX_SPI2_MISO_GPIO_Mode                  GPIO_MODE_AF_PP
-#define MX_SPI2_MISO_GPIO_PuPd                  GPIO_NOPULL
-#define MX_SPI2_MISO_GPIO_Speed                 GPIO_SPEED_FREQ_VERY_HIGH
-#define MX_SPI2_MISO_GPIO_AF                    GPIO_AF5_SPI2
-
-/* SPI2_MOSI */
-#define MX_SPI2_MOSI_Pin                        PB15
-#define MX_SPI2_MOSI_GPIO_Pin                   GPIO_PIN_15
-#define MX_SPI2_MOSI_GPIOx                      GPIOB
-#define MX_SPI2_MOSI_GPIO_Mode                  GPIO_MODE_AF_PP
-#define MX_SPI2_MOSI_GPIO_PuPd                  GPIO_NOPULL
-#define MX_SPI2_MOSI_GPIO_Speed                 GPIO_SPEED_FREQ_VERY_HIGH
-#define MX_SPI2_MOSI_GPIO_AF                    GPIO_AF5_SPI2
-
-/* SPI2_SCK */
-#define MX_SPI2_SCK_Pin                         PI1
-#define MX_SPI2_SCK_GPIO_Pin                    GPIO_PIN_1
-#define MX_SPI2_SCK_GPIOx                       GPIOI
-#define MX_SPI2_SCK_GPIO_Mode                   GPIO_MODE_AF_PP
-#define MX_SPI2_SCK_GPIO_PuPd                   GPIO_NOPULL
-#define MX_SPI2_SCK_GPIO_Speed                  GPIO_SPEED_FREQ_VERY_HIGH
-#define MX_SPI2_SCK_GPIO_AF                     GPIO_AF5_SPI2
 
 /*------------------------------ USART1         -----------------------------*/
 #define MX_USART1                               1

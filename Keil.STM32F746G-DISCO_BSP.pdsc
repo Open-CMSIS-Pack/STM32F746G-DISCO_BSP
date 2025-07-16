@@ -27,6 +27,9 @@
       - update README.md file
       - add DWARF-5 debug information
       - add generated output files
+      Layers:
+      -- modify Default layer (remove SPI2 support)
+      -- add SPI2 board layer
       Reorganize Licenses:
       - LICENSES (combined license file: Apache-2.0 and BSD-3-Clause)
       - LICENSE-Apache-2.0 (for CMSIS add-ons)
@@ -81,6 +84,7 @@
 
   <csolution>
     <clayer type="Board" path="Layers/Default" file="Board.clayer.yml" copy-to="Board/STM32F746G-DISCO" condition="STM32F746G-DISCO"/>
+    <clayer type="Board" path="Layers/SPI2"    file="Board.clayer.yml" copy-to="Board/STM32F746G-DISCO" condition="STM32F746G-DISCO"/>
   </csolution>
 
   <boards>

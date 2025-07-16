@@ -1,5 +1,5 @@
 /*---------------------------------------------------------------------------
- * Copyright (c) 2024 Arm Limited (or its affiliates).
+ * Copyright (c) 2024-2025 Arm Limited (or its affiliates).
  * All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
@@ -25,7 +25,6 @@
 #include "Driver_ETH_PHY.h"
 #include "Driver_I2C.h"
 #include "Driver_MCI.h"
-#include "Driver_SPI.h"
 #include "Driver_USART.h"
 #include "Driver_USBD.h"
 #include "Driver_USBH.h"
@@ -40,6 +39,8 @@
 #define ARDUINO_UNO_D8      GPIO_PIN_ID_PORTI(2U)
 #define ARDUINO_UNO_D9      GPIO_PIN_ID_PORTA(15U)
 #define ARDUINO_UNO_D10     GPIO_PIN_ID_PORTA(8U)
+#define ARDUINO_UNO_D11     GPIO_PIN_ID_PORTB(15U)
+#define ARDUINO_UNO_D12     GPIO_PIN_ID_PORTB(14U)
 #define ARDUINO_UNO_D14     GPIO_PIN_ID_PORTA(0U)
 #define ARDUINO_UNO_D15     GPIO_PIN_ID_PORTF(10U)
 #define ARDUINO_UNO_D16     GPIO_PIN_ID_PORTF(9U)
@@ -49,7 +50,6 @@
 
 // CMSIS Driver instances on Arduino Connector
 #define ARDUINO_UNO_I2C     1           // I2C1
-#define ARDUINO_UNO_SPI     2           // SPI2
 #define ARDUINO_UNO_UART    6           // USART6
 
 // CMSIS Driver instances of Board peripherals
@@ -66,7 +66,6 @@ extern ARM_DRIVER_ETH_MAC   ARM_Driver_ETH_MAC_(CMSIS_DRIVER_ETH);      // ETH M
 extern ARM_DRIVER_ETH_PHY   ARM_Driver_ETH_PHY_(CMSIS_DRIVER_ETH);      // ETH PHY
 extern ARM_DRIVER_I2C       ARM_Driver_I2C_(ARDUINO_UNO_I2C);           // Arduino I2C
 extern ARM_DRIVER_MCI       ARM_Driver_MCI_(CMSIS_DRIVER_MCI);          // MCI
-extern ARM_DRIVER_SPI       ARM_Driver_SPI_(ARDUINO_UNO_SPI);           // Arduino SPI
 extern ARM_DRIVER_USART     ARM_Driver_USART_(ARDUINO_UNO_UART);        // Arduino UART
 extern ARM_DRIVER_USART     ARM_Driver_USART_(RETARGET_STDIO_UART);     // ST-LINK
 extern ARM_DRIVER_USBD      ARM_Driver_USBD_(CMSIS_DRIVER_USBD);        // USB Device
